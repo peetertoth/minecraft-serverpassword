@@ -1,0 +1,12 @@
+name: ServerPassword
+version: 1.0
+main: hu.peetertoth.serverpassword.ServerPassword
+prefix: ServerPassword
+authors: [PeterToth]
+commands:
+  login:
+    description: You should login to play on this server.
+    usage: /login <password>
+  run:
+    description: RUN.
+    usage: /run
