@@ -16,6 +16,7 @@ import org.bukkit.event.player.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by tpeter on 2017.03.11..
@@ -51,10 +52,7 @@ public class RequireLoginLCE extends Loggable implements Listener, CommandExecut
             } else {
                 player.sendMessage(loginMessage);
             }
-        } else {
-            playersData.getConfiguration().set(name, new PlayerInformation(name, hostName));
         }
-
     }
 
     private PlayerInformation getPlayerInformation(String name) {
@@ -77,7 +75,7 @@ public class RequireLoginLCE extends Loggable implements Listener, CommandExecut
                 final String name = sender.getName();
 
                 this.authenticatedUsers.add(name);
-                PlayerInformation playerInformation = getPlayerInformation(name);
+                PlayerInformation playerInformation = Optional.of(getPlayerInformation(name)).orElse(new PlayerInformation(name));
                 playerInformation.setHostName(sender.getServer().getOnlinePlayers()
                         .stream()
                         .filter(onlinePlayer -> onlinePlayer.getName().equals(name))

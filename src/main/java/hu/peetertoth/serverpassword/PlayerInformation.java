@@ -21,6 +21,11 @@ public class PlayerInformation implements ConfigurationSerializable {
     public PlayerInformation() {
     }
 
+    public PlayerInformation(String name) {
+        this.name = name;
+        this.hostName = "notSpecified";
+    }
+
     public PlayerInformation(String name, String hostName) {
         this.name = name;
         this.hostName = hostName;
