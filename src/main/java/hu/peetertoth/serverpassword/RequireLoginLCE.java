@@ -52,6 +52,8 @@ public class RequireLoginLCE extends Loggable implements Listener, CommandExecut
             } else {
                 player.sendMessage(loginMessage);
             }
+        } else {
+            player.sendMessage(loginMessage);
         }
     }
 
