@@ -79,7 +79,8 @@ public class RequireLoginLCE extends Loggable implements Listener, CommandExecut
                 final String name = sender.getName();
 
                 this.authenticatedUsers.add(name);
-                PlayerInformation playerInformation = Optional.of(getPlayerInformation(name)).orElse(new PlayerInformation(name));
+                PlayerInformation playerInformation = Optional.ofNullable(getPlayerInformation(name))
+                        .orElse(new PlayerInformation(name));
                 playerInformation.setHostName(sender.getServer().getOnlinePlayers()
                         .stream()
                         .filter(onlinePlayer -> onlinePlayer.getName().equals(name))

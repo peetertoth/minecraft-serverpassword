@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06b0a4a7-f37c-47a0-bf69-7f92deb91de4" name="Default" comment="fix">
+    <list default="true" id="06b0a4a7-f37c-47a0-bf69-7f92deb91de4" name="Default" comment="debug">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hu/peetertoth/serverpassword/RequireLoginLCE.class" afterPath="$PROJECT_DIR$/target/classes/hu/peetertoth/serverpassword/RequireLoginLCE.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/original-serverpassword-1.0.jar" afterPath="$PROJECT_DIR$/target/original-serverpassword-1.0.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/serverpassword-1.0.jar" afterPath="$PROJECT_DIR$/target/serverpassword-1.0.jar" />
@@ -74,8 +74,8 @@
       <file leaf-file-name="RequireLoginLCE.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/RequireLoginLCE.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="56" column="67" lean-forward="false" selection-start-line="56" selection-start-column="67" selection-end-line="56" selection-end-column="67" />
+            <state relative-caret-position="384">
+              <caret line="82" column="24" lean-forward="false" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -540,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489522239729</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="debug">
+      <created>1489522983666</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1489522983666</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -589,9 +596,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="update" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="debug" />
+    <option name="LAST_COMMIT_MESSAGE" value="debug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -892,8 +902,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/RequireLoginLCE.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="56" column="67" lean-forward="false" selection-start-line="56" selection-start-column="67" selection-end-line="56" selection-end-column="67" />
+        <state relative-caret-position="384">
+          <caret line="82" column="24" lean-forward="false" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
           <folding />
         </state>
       </provider>
