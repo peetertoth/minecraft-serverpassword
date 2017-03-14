@@ -50,9 +50,11 @@ public class RequireLoginLCE extends Loggable implements Listener, CommandExecut
             if (playerInformation.getHostName().equals(hostName)) {
                 authenticatedUsers.add(name);
             } else {
+                logInfo("Login message sent. { name = " + name + " }");
                 player.sendMessage(loginMessage);
             }
         } else {
+            logInfo("Login message sent. { name = " + name + " }");
             player.sendMessage(loginMessage);
         }
     }
