@@ -11,6 +11,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.*;
 
@@ -82,7 +83,14 @@ public class WalkingOnWaterLCE implements Listener, CommandExecutor, Runnable {
                     materialsUnderPlayer.add(loc.getBlock().getType());
 
                     if (materialsUnderPlayer.stream().anyMatch(material -> !material.equals(Material.AIR))) {
-                        player.setVelocity(player.getEyeLocation().getDirection());
+
+                        ItemStack heldItems = player.getInventory().getItemInMainHand();
+                        if (heldItems.getType().equals(Material.STICK)) {
+                            double amount = heldItems.getAmount() * 0.1;
+                            player.setVelocity(player.getEyeLocation().getDirection().multiply(amount));
+                        } else {
+                            player.setVelocity(player.getEyeLocation().getDirection());
+                        }
                         usedAbility.put(player.getName(), Calendar.getInstance().getTimeInMillis());
                     }
 
