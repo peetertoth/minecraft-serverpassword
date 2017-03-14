@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06b0a4a7-f37c-47a0-bf69-7f92deb91de4" name="Default" comment="update">
+    <list default="true" id="06b0a4a7-f37c-47a0-bf69-7f92deb91de4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hu/peetertoth/serverpassword/PlayerInformation.class" afterPath="$PROJECT_DIR$/target/classes/hu/peetertoth/serverpassword/PlayerInformation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hu/peetertoth/serverpassword/RequireLoginLCE.class" afterPath="$PROJECT_DIR$/target/classes/hu/peetertoth/serverpassword/RequireLoginLCE.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hu/peetertoth/serverpassword/WalkingOnWaterLCE.class" afterPath="$PROJECT_DIR$/target/classes/hu/peetertoth/serverpassword/WalkingOnWaterLCE.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/original-serverpassword-1.0.jar" afterPath="$PROJECT_DIR$/target/original-serverpassword-1.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/serverpassword-1.0.jar" afterPath="$PROJECT_DIR$/target/serverpassword-1.0.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/PlayerInformation.java" afterPath="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/PlayerInformation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/RequireLoginLCE.java" afterPath="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/RequireLoginLCE.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/WalkingOnWaterLCE.java" afterPath="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/WalkingOnWaterLCE.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -72,8 +79,8 @@
       <file leaf-file-name="RequireLoginLCE.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/RequireLoginLCE.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="65" column="13" lean-forward="true" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+            <state relative-caret-position="459">
+              <caret line="84" column="40" lean-forward="true" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -516,6 +523,14 @@
       <option name="presentableId" value="Default" />
       <updated>1489240271563</updated>
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1489521885781</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1489521885781</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -562,6 +577,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -862,8 +881,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/RequireLoginLCE.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="65" column="13" lean-forward="true" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+        <state relative-caret-position="459">
+          <caret line="84" column="40" lean-forward="true" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
           <folding />
         </state>
       </provider>
