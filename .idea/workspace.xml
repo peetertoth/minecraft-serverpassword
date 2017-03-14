@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06b0a4a7-f37c-47a0-bf69-7f92deb91de4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hu/peetertoth/serverpassword/WalkingOnWaterLCE.class" afterPath="$PROJECT_DIR$/target/classes/hu/peetertoth/serverpassword/WalkingOnWaterLCE.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hu/peetertoth/serverpassword/RequireLoginLCE.class" afterPath="$PROJECT_DIR$/target/classes/hu/peetertoth/serverpassword/RequireLoginLCE.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/original-serverpassword-1.0.jar" afterPath="$PROJECT_DIR$/target/original-serverpassword-1.0.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/serverpassword-1.0.jar" afterPath="$PROJECT_DIR$/target/serverpassword-1.0.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/WalkingOnWaterLCE.java" afterPath="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/WalkingOnWaterLCE.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/RequireLoginLCE.java" afterPath="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/RequireLoginLCE.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -30,7 +30,7 @@
       <file leaf-file-name="ServerPassword.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/ServerPassword.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="425">
               <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -39,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WalkingOnWaterLCE.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WalkingOnWaterLCE.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/WalkingOnWaterLCE.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
@@ -71,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RequireLoginLCE.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RequireLoginLCE.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/RequireLoginLCE.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="82" column="24" lean-forward="false" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+            <state relative-caret-position="486">
+              <caret line="85" column="50" lean-forward="true" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -136,8 +136,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/ServerPassword.java" />
         <option value="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/PlayerInformation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/RequireLoginLCE.java" />
         <option value="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/WalkingOnWaterLCE.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/RequireLoginLCE.java" />
       </list>
     </option>
   </component>
@@ -554,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489523415575</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update">
+      <created>1489524218075</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1489524218075</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -605,10 +612,10 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="update" />
     <MESSAGE value="debug" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -879,28 +886,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/ServerPassword.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/PlayerInformation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/RequireLoginLCE.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="82" column="24" lean-forward="false" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -912,6 +901,24 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/ServerPassword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hu/peetertoth/serverpassword/RequireLoginLCE.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="85" column="50" lean-forward="true" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>

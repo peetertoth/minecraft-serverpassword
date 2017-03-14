@@ -63,6 +63,11 @@ public class RequireLoginLCE extends Loggable implements Listener, CommandExecut
         return (PlayerInformation) playersData.getConfiguration().get(name);
     }
 
+    private void storePlayerInformation(PlayerInformation playerInformation) {
+        playersData.getConfiguration().set(playerInformation.getName(), playerInformation);
+        logInfo("New player information stored. { name = " + playerInformation.getName() + " }");
+    }
+
     @EventHandler(ignoreCancelled = true)
     public void onPlayerQuit(PlayerQuitEvent event) {
     }
@@ -88,6 +93,7 @@ public class RequireLoginLCE extends Loggable implements Listener, CommandExecut
                         .get()
                         .getAddress()
                         .getHostName());
+                storePlayerInformation(playerInformation);
                 sender.sendMessage(successfulLoginMessage);
                 return true;
             }
