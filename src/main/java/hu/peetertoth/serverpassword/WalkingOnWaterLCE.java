@@ -63,6 +63,7 @@ public class WalkingOnWaterLCE implements Listener, CommandExecutor, Runnable {
                 event.getCause().equals(EntityDamageEvent.DamageCause.FALL) &&
                 usedAbility.containsKey(name)) {
             if (Calendar.getInstance().getTimeInMillis() - usedAbility.get(name) < 5000) {
+                event.setCancelled(true);
                 event.setDamage(0);
             }
         }
