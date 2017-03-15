@@ -1,4 +1,4 @@
-package hu.peetertoth.serverpassword;
+package hu.peetertoth.serverpassword.lce;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -64,6 +64,7 @@ public class WalkingOnWaterLCE implements Listener, CommandExecutor, Runnable {
                 usedAbility.containsKey(name)) {
             if (Calendar.getInstance().getTimeInMillis() - usedAbility.get(name) < 5000) {
                 event.setDamage(0);
+                event.setCancelled(true);
             }
         }
     }

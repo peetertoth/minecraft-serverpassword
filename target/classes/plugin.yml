@@ -1,6 +1,6 @@
 name: ServerPassword
 version: 1.0
-main: hu.peetertoth.serverpassword.ServerPassword
+main: hu.peetertoth.serverpassword.main.ServerPassword
 prefix: ServerPassword
 authors: [PeterToth]
 commands:
@@ -10,3 +10,6 @@ commands:
   run:
     description: RUN.
     usage: /run
+  enderman:
+    description: ENDERMAN.
+    usage: /enderman

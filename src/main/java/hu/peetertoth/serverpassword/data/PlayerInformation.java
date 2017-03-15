@@ -1,4 +1,4 @@
-package hu.peetertoth.serverpassword;
+package hu.peetertoth.serverpassword.data;
 
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 
