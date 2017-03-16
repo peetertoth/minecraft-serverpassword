@@ -72,7 +72,7 @@ public class WalkingOnWaterLCE implements Listener, CommandExecutor, Runnable {
     @Override
     public void run() {
         players
-                .stream()
+                .parallelStream()
                 .filter(player -> enabled.contains(player.getName()) && usingAbility.contains(player.getName()))
                 .forEach(player -> {
                     Location loc = player.getLocation().getBlock().getLocation();
