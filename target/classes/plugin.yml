@@ -10,3 +10,6 @@ commands:
   run:
     description: RUN.
     usage: /run
+  alert:
+    description: Alert on entity target
+    usage: /alert
