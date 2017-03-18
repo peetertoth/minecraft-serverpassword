@@ -11,6 +11,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.ItemStack;
@@ -102,7 +103,7 @@ public class WalkingOnWaterLCE implements Listener, CommandExecutor, Runnable {
     }
 
     @EventHandler(ignoreCancelled = true, priority = EventPriority.LOWEST)
-    public void onPlayerLogin(PlayerLoginEvent event) {
+    public void onPlayerJoin(PlayerJoinEvent event) {
         if (enabled.contains(event.getPlayer().getName()))
             event.getPlayer().sendMessage("[WalkingOnWater] Enabled");
     }

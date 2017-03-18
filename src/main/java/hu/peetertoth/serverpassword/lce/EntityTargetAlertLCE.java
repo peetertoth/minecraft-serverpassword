@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityTargetEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
@@ -135,9 +136,13 @@ public class EntityTargetAlertLCE implements Listener, CommandExecutor, Logging,
     }
 
     @EventHandler(ignoreCancelled = true)
-    public void onPlayerLogin(PlayerLoginEvent event) {
-        if (scoreboards.containsKey(event.getPlayer().getName())) {
-            event.getPlayer().sendMessage("[EntityTargetAlert] Enabled");
+    public void onPlayerJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        String name = player.getName();
+
+        if (scoreboards.containsKey(name)) {
+            player.setScoreboard(scoreboards.get(name).getScoreboard());
+            player.sendMessage("[EntityTargetAlert] Enabled");
         }
     }
 }
