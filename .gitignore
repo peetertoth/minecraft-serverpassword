@@ -4,5 +4,4 @@ target/classes/hu/peetertoth/serverpassword/lce/
 target/classes/hu/peetertoth/serverpassword/main/
 target/generated-sources/
 .idea/*
-.idea/workspace.xml
 target/serverpassword-1.0-shaded.jar
