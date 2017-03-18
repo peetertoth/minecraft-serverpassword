@@ -1,5 +1,6 @@
-package hu.peetertoth.serverpassword;
+package hu.peetertoth.serverpassword.data;
 
+import hu.peetertoth.serverpassword.lce.Logging;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -10,7 +11,7 @@ import java.util.logging.Logger;
 /**
  * Created by tpeter on 2017.03.11..
  */
-public class CustomConfig extends Loggable {
+public class CustomConfig implements Logging {
 
     private String filePath;
     private FileConfiguration configuration;
@@ -56,7 +57,7 @@ public class CustomConfig extends Loggable {
     }
 
     @Override
-    protected Class getImplementerClass() {
+    public Class getImplementerClass() {
         return getClass();
     }
 }

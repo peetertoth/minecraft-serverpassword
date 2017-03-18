@@ -1,5 +1,11 @@
-package hu.peetertoth.serverpassword;
+package hu.peetertoth.serverpassword.main;
 
+import hu.peetertoth.serverpassword.CONSTANTS;
+import hu.peetertoth.serverpassword.data.CustomConfig;
+import hu.peetertoth.serverpassword.data.PlayerInformation;
+import hu.peetertoth.serverpassword.lce.EndermanLCE;
+import hu.peetertoth.serverpassword.lce.RequireLoginLCE;
+import hu.peetertoth.serverpassword.lce.WalkingOnWaterLCE;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -29,17 +35,21 @@ public final class ServerPassword extends JavaPlugin implements Listener {
 
         RequireLoginLCE requireLoginLCE = new RequireLoginLCE(this.playersData, this.getConfig());
 
-        // Register event listeners
+        // Require login
         if (getConfig().getBoolean(CONSTANTS.Config.KEY.REQUIRE_PASSWORD))
             getServer().getPluginManager().registerEvents(requireLoginLCE, this);
-
-        // Set command executors
         getCommand(getConfig().getString(CONSTANTS.Config.KEY.LOGIN_COMMAND)).setExecutor(requireLoginLCE);
 
+        // Walking on water
         WalkingOnWaterLCE walkingOnWaterLCE = new WalkingOnWaterLCE(getServer().getOnlinePlayers());
         getServer().getPluginManager().registerEvents(walkingOnWaterLCE, this);
         getServer().getScheduler().scheduleSyncRepeatingTask(this, walkingOnWaterLCE, 0L, 1L);
         getCommand("run").setExecutor(walkingOnWaterLCE);
+
+        // Enderman
+        EndermanLCE endermanLCE = new EndermanLCE(getServer().getOnlinePlayers());
+        getServer().getPluginManager().registerEvents(endermanLCE, this);
+        getCommand("enderman").setExecutor(endermanLCE);
     }
 
     @Override

@@ -1,7 +1,8 @@
-D:\MyWorks\GitBase\minecraft\minecraft-serverpassword\src\main\java\hu\peetertoth\serverpassword\PlayerInformation.java
 D:\MyWorks\GitBase\minecraft\minecraft-serverpassword\src\main\java\hu\peetertoth\serverpassword\CONSTANTS.java
-D:\MyWorks\GitBase\minecraft\minecraft-serverpassword\src\main\java\hu\peetertoth\serverpassword\Loggable.java
-D:\MyWorks\GitBase\minecraft\minecraft-serverpassword\src\main\java\hu\peetertoth\serverpassword\CustomConfig.java
-D:\MyWorks\GitBase\minecraft\minecraft-serverpassword\src\main\java\hu\peetertoth\serverpassword\RequireLoginLCE.java
-D:\MyWorks\GitBase\minecraft\minecraft-serverpassword\src\main\java\hu\peetertoth\serverpassword\ServerPassword.java
-D:\MyWorks\GitBase\minecraft\minecraft-serverpassword\src\main\java\hu\peetertoth\serverpassword\WalkingOnWaterLCE.java
+D:\MyWorks\GitBase\minecraft\minecraft-serverpassword\src\main\java\hu\peetertoth\serverpassword\data\CustomConfig.java
+D:\MyWorks\GitBase\minecraft\minecraft-serverpassword\src\main\java\hu\peetertoth\serverpassword\lce\Logging.java
+D:\MyWorks\GitBase\minecraft\minecraft-serverpassword\src\main\java\hu\peetertoth\serverpassword\lce\WalkingOnWaterLCE.java
+D:\MyWorks\GitBase\minecraft\minecraft-serverpassword\src\main\java\hu\peetertoth\serverpassword\lce\RequireLoginLCE.java
+D:\MyWorks\GitBase\minecraft\minecraft-serverpassword\src\main\java\hu\peetertoth\serverpassword\lce\EndermanLCE.java
+D:\MyWorks\GitBase\minecraft\minecraft-serverpassword\src\main\java\hu\peetertoth\serverpassword\main\ServerPassword.java
+D:\MyWorks\GitBase\minecraft\minecraft-serverpassword\src\main\java\hu\peetertoth\serverpassword\data\PlayerInformation.java

@@ -1,5 +1,8 @@
-package hu.peetertoth.serverpassword;
+package hu.peetertoth.serverpassword.lce;
 
+import hu.peetertoth.serverpassword.CONSTANTS;
+import hu.peetertoth.serverpassword.data.CustomConfig;
+import hu.peetertoth.serverpassword.data.PlayerInformation;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -21,7 +24,7 @@ import java.util.Optional;
 /**
  * Created by tpeter on 2017.03.11..
  */
-public class RequireLoginLCE extends Loggable implements Listener, CommandExecutor {
+public class RequireLoginLCE implements Listener, CommandExecutor, Logging {
 
     private CustomConfig playersData;
     private List<String> authenticatedUsers;
@@ -73,7 +76,7 @@ public class RequireLoginLCE extends Loggable implements Listener, CommandExecut
     }
 
     @Override
-    protected Class getImplementerClass() {
+    public Class getImplementerClass() {
         return getClass();
     }
 
