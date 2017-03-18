@@ -6,6 +6,5 @@ hu\peetertoth\serverpassword\CONSTANTS.class
 hu\peetertoth\serverpassword\CONSTANTS$PlayerData.class
 hu\peetertoth\serverpassword\lce\WalkingOnWaterLCE.class
 hu\peetertoth\serverpassword\CONSTANTS$Config$KEY.class
-hu\peetertoth\serverpassword\lce\EndermanLCE.class
 hu\peetertoth\serverpassword\CONSTANTS$Config.class
 hu\peetertoth\serverpassword\data\CustomConfig.class

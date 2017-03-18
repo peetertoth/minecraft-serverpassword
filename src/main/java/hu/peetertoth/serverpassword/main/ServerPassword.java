@@ -3,7 +3,6 @@ package hu.peetertoth.serverpassword.main;
 import hu.peetertoth.serverpassword.CONSTANTS;
 import hu.peetertoth.serverpassword.data.CustomConfig;
 import hu.peetertoth.serverpassword.data.PlayerInformation;
-import hu.peetertoth.serverpassword.lce.EndermanLCE;
 import hu.peetertoth.serverpassword.lce.RequireLoginLCE;
 import hu.peetertoth.serverpassword.lce.WalkingOnWaterLCE;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
@@ -46,10 +45,6 @@ public final class ServerPassword extends JavaPlugin implements Listener {
         getServer().getScheduler().scheduleSyncRepeatingTask(this, walkingOnWaterLCE, 0L, 1L);
         getCommand("run").setExecutor(walkingOnWaterLCE);
 
-        // Enderman
-        EndermanLCE endermanLCE = new EndermanLCE(getServer().getOnlinePlayers());
-        getServer().getPluginManager().registerEvents(endermanLCE, this);
-        getCommand("enderman").setExecutor(endermanLCE);
     }
 
     @Override

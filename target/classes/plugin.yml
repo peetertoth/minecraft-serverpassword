@@ -10,6 +10,3 @@ commands:
   run:
     description: RUN.
     usage: /run
-  enderman:
-    description: ENDERMAN.
-    usage: /enderman

@@ -1,0 +1,6 @@
+
+target/classes/hu/peetertoth/serverpassword/data/
+target/classes/hu/peetertoth/serverpassword/lce/
+target/classes/hu/peetertoth/serverpassword/main/
+target/generated-sources/
+.idea/*
