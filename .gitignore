@@ -5,3 +5,4 @@ target/classes/hu/peetertoth/serverpassword/main/
 target/generated-sources/
 .idea/*
 target/serverpassword-1.0-shaded.jar
+serverpassword.iml
