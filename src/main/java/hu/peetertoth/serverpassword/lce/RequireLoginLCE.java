@@ -10,6 +10,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockDamageEvent;
@@ -42,7 +43,7 @@ public class RequireLoginLCE implements Listener, CommandExecutor, Logging {
         this.authenticatedUsers = new ArrayList<>();
     }
 
-    @EventHandler(ignoreCancelled = true)
+    @EventHandler(ignoreCancelled = true, priority = EventPriority.LOWEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         String name = player.getName();
@@ -214,6 +215,7 @@ public class RequireLoginLCE implements Listener, CommandExecutor, Logging {
     public void onPlayerMove(PlayerMoveEvent event) {
         if (!authenticatedUsers.contains(event.getPlayer().getName())) {
             event.setCancelled(true);
+            event.getPlayer().sendMessage(loginMessage);
         }
     }
 

@@ -8,8 +8,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -38,10 +41,10 @@ public class WalkingOnWaterLCE implements Listener, CommandExecutor, Runnable {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (enabled.contains(sender.getName())) {
             enabled.remove(sender.getName());
-            sender.sendMessage("[WalkingOnWater] disabled");
+            sender.sendMessage("[WalkingOnWater] Disabled");
         } else {
             enabled.add(sender.getName());
-            sender.sendMessage("[WalkingOnWater] enabled");
+            sender.sendMessage("[WalkingOnWater] Enabled");
         }
         return true;
     }
@@ -97,5 +100,11 @@ public class WalkingOnWaterLCE implements Listener, CommandExecutor, Runnable {
                     }
 
                 });
+    }
+
+    @EventHandler(ignoreCancelled = true, priority = EventPriority.LOWEST)
+    public void onPlayerJoin(PlayerJoinEvent event) {
+        if (enabled.contains(event.getPlayer().getName()))
+            event.getPlayer().sendMessage("[WalkingOnWater] Enabled");
     }
 }

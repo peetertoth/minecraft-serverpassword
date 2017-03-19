@@ -3,6 +3,7 @@ package hu.peetertoth.serverpassword.main;
 import hu.peetertoth.serverpassword.CONSTANTS;
 import hu.peetertoth.serverpassword.data.CustomConfig;
 import hu.peetertoth.serverpassword.data.PlayerInformation;
+import hu.peetertoth.serverpassword.lce.EntityTargetAlertLCE;
 import hu.peetertoth.serverpassword.lce.RequireLoginLCE;
 import hu.peetertoth.serverpassword.lce.WalkingOnWaterLCE;
 import org.bukkit.configuration.serialization.ConfigurationSerialization;
@@ -44,6 +45,12 @@ public final class ServerPassword extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(walkingOnWaterLCE, this);
         getServer().getScheduler().scheduleSyncRepeatingTask(this, walkingOnWaterLCE, 0L, 1L);
         getCommand("run").setExecutor(walkingOnWaterLCE);
+
+        // Entity target alert
+        EntityTargetAlertLCE entityTargetAlertLCE = new EntityTargetAlertLCE(getServer().getOnlinePlayers());
+        getServer().getPluginManager().registerEvents(entityTargetAlertLCE, this);
+        getServer().getScheduler().scheduleSyncRepeatingTask(this, entityTargetAlertLCE, 0L, 20L);
+        getCommand("alert").setExecutor(entityTargetAlertLCE);
 
     }
 
