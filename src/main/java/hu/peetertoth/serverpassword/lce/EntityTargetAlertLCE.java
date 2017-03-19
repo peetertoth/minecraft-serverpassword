@@ -12,7 +12,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityTargetEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
@@ -77,13 +76,18 @@ public class EntityTargetAlertLCE implements Listener, CommandExecutor, Logging,
 
     private void onDisable(Player player) {
         this.scoreboards.remove(player.getName());
+
+        Scoreboard scoreboard = scoreboardManager.getNewScoreboard();
+        player.setScoreboard(scoreboard);
     }
 
     @EventHandler(ignoreCancelled = true)
     public void onEntityTarget(EntityTargetEvent event) {
-        if (!event.getEntity().getType().equals(EntityType.EXPERIENCE_ORB) &&
-                event.getTarget() != null &&
-                event.getTarget() instanceof Player) {
+        if (event.getReason().equals(EntityTargetEvent.TargetReason.TEMPT) || event.getEntityType().equals(EntityType.EXPERIENCE_ORB)) {
+            return;
+        }
+
+        if (event.getTarget() != null && event.getTarget() instanceof Player) {
             setTargetOnPlayer(event.getTarget(), event.getEntity());
         } else {
             removeTarget(event.getEntity());

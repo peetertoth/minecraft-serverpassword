@@ -1,13 +1,17 @@
 package hu.peetertoth.serverpassword.data;
 
 import hu.peetertoth.serverpassword.lce.EntityTargetAlertLCE;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.scoreboard.Scoreboard;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
+import static org.bukkit.entity.EntityType.SLIME;
 
 /**
  * Created by kyle on 2017. 03. 18..
@@ -36,7 +40,8 @@ public class ScoreboardInformation {
     public String addIntruder(Entity intruder) {
         intruders.add(intruder);
 
-        String displayName = intruder.getName();
+        String displayName = getColoredNameOfIntruder(intruder);
+
         if (entityIdAndDisplayName.containsValue(displayName)) {
             int index = 1;
             while (entityIdAndDisplayName.containsValue(displayName + "(" + index + ")")) {
@@ -46,6 +51,46 @@ public class ScoreboardInformation {
         }
 
         return entityIdAndDisplayName.put(intruder.getUniqueId().toString(), displayName);
+    }
+
+    private String getColoredNameOfIntruder(Entity intruder) {
+        ChatColor chatColor;
+        switch (intruder.getType()) {
+            case SLIME:
+            case CREEPER:
+                chatColor = ChatColor.GREEN;
+                break;
+            case ZOMBIE:
+            case ZOMBIE_VILLAGER:
+            case PIG_ZOMBIE:
+                chatColor = ChatColor.DARK_GREEN;
+                break;
+            case HUSK:
+                chatColor = ChatColor.DARK_GRAY;
+                break;
+            case SKELETON:
+            case GHAST:
+                chatColor = ChatColor.GRAY;
+                break;
+            case SPIDER:
+            case CAVE_SPIDER:
+                chatColor = ChatColor.DARK_RED;
+                break;
+            case WITCH:
+                chatColor = ChatColor.DARK_PURPLE;
+                break;
+            case ENDERMAN:
+                chatColor = ChatColor.DARK_BLUE;
+                break;
+            case BLAZE:
+            case MAGMA_CUBE:
+                chatColor = ChatColor.YELLOW;
+                break;
+            default:
+                chatColor = ChatColor.RESET;
+                break;
+        }
+        return chatColor + intruder.getName() + ChatColor.RESET;
     }
 
     private boolean removeIntruder(Entity intruder) {
