@@ -3,6 +3,7 @@ package hu.peetertoth.serverpassword.main;
 import hu.peetertoth.serverpassword.CONSTANTS;
 import hu.peetertoth.serverpassword.data.CustomConfig;
 import hu.peetertoth.serverpassword.data.PlayerInformation;
+import hu.peetertoth.serverpassword.lce.CakeIsALieLCE;
 import hu.peetertoth.serverpassword.lce.EntityTargetAlertLCE;
 import hu.peetertoth.serverpassword.lce.RequireLoginLCE;
 import hu.peetertoth.serverpassword.lce.WalkingOnWaterLCE;
@@ -21,6 +22,7 @@ public final class ServerPassword extends JavaPlugin implements Listener {
      * Stores player data
      */
     private CustomConfig playersData;
+    private CustomConfig cakeData;
 
     @Override
     public void onEnable() {
@@ -33,9 +35,11 @@ public final class ServerPassword extends JavaPlugin implements Listener {
         // Read players data
         this.playersData = new CustomConfig(getDataFolder() + "/" + CONSTANTS.PlayerData.FILE_NAME);
 
-        RequireLoginLCE requireLoginLCE = new RequireLoginLCE(this.playersData, this.getConfig());
+        // Cake data
+        this.cakeData = new CustomConfig(getDataFolder() + "/" + CONSTANTS.CakeData.FILE_NAME);
 
         // Require login
+        RequireLoginLCE requireLoginLCE = new RequireLoginLCE(this.playersData, this.getConfig());
         if (getConfig().getBoolean(CONSTANTS.Config.KEY.REQUIRE_PASSWORD))
             getServer().getPluginManager().registerEvents(requireLoginLCE, this);
         getCommand(getConfig().getString(CONSTANTS.Config.KEY.LOGIN_COMMAND)).setExecutor(requireLoginLCE);
@@ -52,12 +56,18 @@ public final class ServerPassword extends JavaPlugin implements Listener {
         getServer().getScheduler().scheduleSyncRepeatingTask(this, entityTargetAlertLCE, 0L, 20L);
         getCommand("alert").setExecutor(entityTargetAlertLCE);
 
+        // Cake
+        CakeIsALieLCE cakeIsALieLCE = new CakeIsALieLCE(this.cakeData);
+        getServer().getPluginManager().registerEvents(cakeIsALieLCE, this);
+        getCommand("cake").setExecutor(cakeIsALieLCE);
+
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
         this.playersData.save();
+        this.cakeData.save();
     }
 
     private void initConfig() {

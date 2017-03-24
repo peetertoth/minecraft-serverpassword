@@ -13,3 +13,6 @@ commands:
   alert:
     description: Alert on entity target
     usage: /alert
+  cake:
+    description: Cake
+    usage: /cake

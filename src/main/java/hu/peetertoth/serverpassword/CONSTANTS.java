@@ -18,4 +18,8 @@ public class CONSTANTS {
     public static class PlayerData {
         public static final String FILE_NAME = "player_data.yml";
     }
+    public static class CakeData {
+        public static final String FILE_NAME = "c_data.yml";
+        public static final String CAKE_ARRAY = "c_array";
+    }
 }
