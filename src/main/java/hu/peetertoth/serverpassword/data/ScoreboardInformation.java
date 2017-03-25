@@ -37,7 +37,10 @@ public class ScoreboardInformation {
         return intruders;
     }
 
-    public String addIntruder(Entity intruder) {
+    public void addIntruder(Entity intruder) {
+        if (intruders.contains(intruder))
+            return;
+
         intruders.add(intruder);
 
         String displayName = getColoredNameOfIntruder(intruder);
@@ -49,8 +52,7 @@ public class ScoreboardInformation {
             }
             displayName += "(" + index + ")";
         }
-
-        return entityIdAndDisplayName.put(intruder.getUniqueId().toString(), displayName);
+        entityIdAndDisplayName.put(intruder.getUniqueId().toString(), displayName);
     }
 
     private String getColoredNameOfIntruder(Entity intruder) {
@@ -93,10 +95,11 @@ public class ScoreboardInformation {
         return chatColor + intruder.getName() + ChatColor.RESET;
     }
 
-    private boolean removeIntruder(Entity intruder) {
+    public boolean removeIntruder(Entity intruder) {
         if (!intruders.contains(intruder)) {
             return false;
         }
+        scoreboard.resetScores(getIntruderName(intruder));
         intruders.remove(intruder);
         entityIdAndDisplayName.remove(String.valueOf(intruder.getUniqueId()));
 
@@ -105,13 +108,6 @@ public class ScoreboardInformation {
 
     public String getIntruderName(Entity intruder) {
         return entityIdAndDisplayName.get(String.valueOf(intruder.getUniqueId()));
-    }
-
-    public void resetScores(Entity entity) {
-        if (intruders.contains(entity)) {
-            scoreboard.resetScores(getIntruderName(entity));
-            removeIntruder(entity);
-        }
     }
 
     public void setScores(Entity entity, int score) {

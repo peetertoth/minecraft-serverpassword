@@ -49,7 +49,7 @@ public final class ServerPassword extends JavaPlugin implements Listener {
         // Entity target alert
         EntityTargetAlertLCE entityTargetAlertLCE = new EntityTargetAlertLCE(getServer().getOnlinePlayers());
         getServer().getPluginManager().registerEvents(entityTargetAlertLCE, this);
-        getServer().getScheduler().scheduleSyncRepeatingTask(this, entityTargetAlertLCE, 0L, 20L);
+        getServer().getScheduler().scheduleSyncRepeatingTask(this, entityTargetAlertLCE, 0L, 10L);
         getCommand("alert").setExecutor(entityTargetAlertLCE);
 
     }

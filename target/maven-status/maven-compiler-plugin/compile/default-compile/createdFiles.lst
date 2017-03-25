@@ -2,6 +2,7 @@ hu\peetertoth\serverpassword\main\ServerPassword.class
 hu\peetertoth\serverpassword\data\PlayerInformation.class
 hu\peetertoth\serverpassword\CONSTANTS.class
 hu\peetertoth\serverpassword\lce\WalkingOnWaterLCE.class
+hu\peetertoth\serverpassword\lce\EntityTargetAlertLCE$1.class
 hu\peetertoth\serverpassword\CONSTANTS$Config.class
 hu\peetertoth\serverpassword\data\ScoreboardInformation.class
 hu\peetertoth\serverpassword\lce\Logging.class
