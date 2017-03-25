@@ -37,22 +37,29 @@ public class ScoreboardInformation {
         return intruders;
     }
 
-    public void addIntruder(Entity intruder) {
-        if (intruders.contains(intruder))
-            return;
-
+    public void addIntruder(Entity intruder, boolean targeting) {
         intruders.add(intruder);
 
-        String displayName = getColoredNameOfIntruder(intruder);
+        String displayName = getIntruderName(intruder);
+        if (displayName == null) {
+            displayName = getColoredNameOfIntruder(intruder);
 
-        if (entityIdAndDisplayName.containsValue(displayName)) {
-            int index = 1;
-            while (entityIdAndDisplayName.containsValue(displayName + "(" + index + ")")) {
-                index++;
+            if (entityIdAndDisplayName.containsValue(displayName)) {
+                int index = 1;
+                while (entityIdAndDisplayName.containsValue(displayName + "(" + index + ")")) {
+                    index++;
+                }
+                displayName += "(" + index + ")";
             }
-            displayName += "(" + index + ")";
+
+            entityIdAndDisplayName.put(intruder.getUniqueId().toString(), displayName);
         }
-        entityIdAndDisplayName.put(intruder.getUniqueId().toString(), displayName);
+//        else {
+//            scoreboard.resetScores(displayName);
+//        }
+//
+//        displayName = !targeting ? displayName : ChatColor.RED + "! " + ChatColor.RESET + displayName;
+//        entityIdAndDisplayName.put(intruder.getUniqueId().toString(), displayName);
     }
 
     private String getColoredNameOfIntruder(Entity intruder) {

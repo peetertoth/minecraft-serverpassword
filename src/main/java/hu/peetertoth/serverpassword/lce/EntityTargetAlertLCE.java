@@ -18,7 +18,10 @@ import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -84,27 +87,23 @@ public class EntityTargetAlertLCE implements Listener, CommandExecutor, Logging,
         player.setScoreboard(scoreboard);
     }
 
-    private void setTargetOnPlayer(Entity target, Entity entity) {
-        String name = target.getName();
-        ScoreboardInformation sInfo = scoreboards.get(name);
-        if (sInfo != null) {
-            sInfo.addIntruder(entity);
+    @EventHandler(ignoreCancelled = true)
+    public void onEntityTarget(EntityTargetEvent event) {
+        if (event.getEntityType().equals(EntityType.EXPERIENCE_ORB) || event.getReason().equals(EntityTargetEvent.TargetReason.TEMPT)) {
+            return;
         }
-    }
 
-    private void removeTarget(Entity target, Entity entity) {
-        String name = target.getName();
-        ScoreboardInformation sInfo = scoreboards.get(name);
-        if (sInfo != null) {
-            sInfo.removeIntruder(entity);
+        Entity target = event.getTarget();
+        if (target != null && target instanceof Player && scoreboards.containsKey(target.getName())) {
+            ScoreboardInformation scoreboardInformation = scoreboards.get(target.getName());
+            scoreboardInformation.addIntruder(event.getEntity(), true);
         }
     }
 
     @Override
     public void run() {
         onlinePlayers.parallelStream().forEach(player -> {
-            String name = player.getName();
-            ScoreboardInformation scoreboard = this.scoreboards.get(name);
+            ScoreboardInformation scoreboard = this.scoreboards.get(player.getName());
             if (scoreboard == null)
                 return;
 
@@ -121,7 +120,7 @@ public class EntityTargetAlertLCE implements Listener, CommandExecutor, Logging,
 
             player.getLocation().getWorld().getEntities().forEach(entity -> {
                 if (twoInOne.test(entity)) {
-                    scoreboard.addIntruder(entity);
+                    scoreboard.addIntruder(entity, false);
                 } else {
                     scoreboard.removeIntruder(entity);
                 }
@@ -132,16 +131,12 @@ public class EntityTargetAlertLCE implements Listener, CommandExecutor, Logging,
                     .stream()
                     .filter(intruder -> intruder.isDead() || !twoInOne.test(intruder))
                     .collect(Collectors.toSet());
-            removableIntruders.forEach(entity -> {
-                removeTarget(player, entity);
-            });
+            removableIntruders.forEach(entity -> scoreboard.removeIntruder(entity));
 
             if (scoreboard.getScoreboard().getObjectives().isEmpty()) {
                 Objective objective = scoreboard.getScoreboard().registerNewObjective(OBJECTIVE_NAME, CRITERIA);
                 objective.setDisplaySlot(DisplaySlot.SIDEBAR);
             }
-
-            Objective objective = scoreboard.getScoreboard().getObjective(OBJECTIVE_NAME);
 
             intruders.forEach(intruder -> {
                 int distance = (int) player.getLocation().distance(intruder.getLocation());
