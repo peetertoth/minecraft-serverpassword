@@ -74,6 +74,7 @@ public class RequireLoginLCE implements Listener, CommandExecutor, Logging {
 
     @EventHandler(ignoreCancelled = true)
     public void onPlayerQuit(PlayerQuitEvent event) {
+        authenticatedUsers.remove(event.getPlayer().getName());
     }
 
     @Override
