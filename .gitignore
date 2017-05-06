@@ -1,9 +1,5 @@
-
-target/classes/hu/peetertoth/serverpassword/data/
-target/classes/hu/peetertoth/serverpassword/lce/
-target/classes/hu/peetertoth/serverpassword/main/
-target/generated-sources/
-.idea/*
-target/serverpassword-1.0-shaded.jar
-serverpassword.iml
+target/classes/
+target/maven-archiver
+target/maven-status
 .idea/
+serverpassword.iml
